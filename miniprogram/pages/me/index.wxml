@@ -1,0 +1,16 @@
+<view class="page safe-pad">
+  <view class="head">
+    <image wx:if="{{avatarUrl}}" class="avatar" src="{{avatarUrl}}" mode="aspectFill" />
+    <view wx:else class="avatar ph">{{glyph}}</view>
+    <view>
+      <view class="name">{{displayName}}</view>
+      <view class="sub">{{departmentName}} · {{username}}</view>
+    </view>
+  </view>
+  <view class="card">
+    <view class="row" bindtap="editName">修改姓名</view>
+    <view class="row" bindtap="changePass">修改密码</view>
+  </view>
+  <button class="out" bindtap="logout">退出登录</button>
+  <tab-bar mode="{{tabMode}}" active="me" />
+</view>

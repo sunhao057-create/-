@@ -1,0 +1,59 @@
+.page {
+  min-height: 100vh;
+  padding: 12px 16px 28px;
+  background: #f3f6fb;
+  box-sizing: border-box;
+}
+
+.bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.search {
+  flex: 1;
+  height: 40px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 0 12px;
+}
+
+.add {
+  margin: 0;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 14px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 12px;
+}
+
+.add::after {
+  border: 0;
+}
+
+.empty {
+  padding: 48px 0;
+  text-align: center;
+  color: #94a3b8;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 14px;
+  margin-bottom: 10px;
+}
+
+.h {
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.p {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #64748b;
+}

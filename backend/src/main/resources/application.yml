@@ -1,0 +1,62 @@
+spring:
+  application:
+    name: backend
+  mvc:
+    async:
+      request-timeout: 600000
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 50MB
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/project_mgmt?useUnicode=true&characterEncoding=UTF-8&connectionCollation=utf8mb4_unicode_ci&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: root
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm
+    time-zone: Asia/Shanghai
+    generator:
+      write-bigdecimal-as-plain: true
+  session:
+    timeout: 399d
+    jdbc:
+      initialize-schema: always
+
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+    session:
+      timeout: 399d
+      cookie:
+        name: PMSESSION
+        http-only: true
+        same-site: lax
+        max-age: 399d
+
+app:
+  upload-dir: uploads
+  seed-demo: true
+  cors-origins: http://localhost:5173,http://127.0.0.1:5173,http://localhost:5174,http://127.0.0.1:5174
+  default-admin:
+    username: admin
+    password: Admin123!
+    display-name: 系统管理员
+  cursor:
+    api-key: ${CURSOR_API_KEY:}
+    repo-url: ${CURSOR_REPO_URL:}
+    starting-ref: ${CURSOR_STARTING_REF:main}
+
+logging:
+  level:
+    org.springframework.security: INFO

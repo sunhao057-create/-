@@ -1,0 +1,113 @@
+<view class="page">
+  <view wx:if="{{loading}}" class="empty">加载中...</view>
+  <view wx:if="{{showEmpty}}" class="empty">没有可填写的字段</view>
+
+  <view wx:if="{{showForm}}">
+    <view wx:if="{{statusText}}" class="status">{{statusText}}</view>
+
+    <view class="sheet">
+      <block wx:for="{{fields}}" wx:key="fkey">
+        <view wx:if="{{item.visible}}">
+          <view wx:if="{{item.isBool}}" class="item item-switch">
+            <view class="label">{{item.label}}<text wx:if="{{item.required}}" class="req"> *</text></view>
+            <switch data-index="{{index}}" checked="{{item.checked}}" disabled="{{item.readonly}}" color="#2563eb" bindchange="onBool" />
+          </view>
+
+          <view wx:if="{{item.isNormal}}" class="item">
+            <view class="label">{{item.label}}<text wx:if="{{item.required}}" class="req"> *</text></view>
+
+            <view wx:if="{{item.isHint}}" class="hint">{{item.hint}}</view>
+
+            <view wx:if="{{item.isDate}}">
+              <picker mode="date" data-index="{{index}}" value="{{item.text}}" disabled="{{item.readonly}}" bindchange="onDate">
+                <view class="control {{item.offClass}}">
+                  <text>{{item.dateShow}}</text>
+                  <text class="arrow"></text>
+                </view>
+              </picker>
+            </view>
+
+            <view wx:if="{{item.isPick}}">
+              <picker data-index="{{index}}" range="{{item.optionLabels}}" value="{{item.index}}" disabled="{{item.readonly}}" bindchange="onPick">
+                <view class="control {{item.offClass}}">
+                  <text>{{item.display}}</text>
+                  <text class="arrow"></text>
+                </view>
+              </picker>
+            </view>
+
+            <view wx:if="{{item.isMulti}}">
+              <checkbox-group class="checks" data-index="{{index}}" bindchange="onMulti">
+                <label wx:for="{{item.options}}" wx:for-item="opt" wx:key="value" class="check">
+                  <checkbox value="{{opt.value}}" checked="{{opt.checked}}" disabled="{{item.readonly}}" color="#2563eb" />
+                  <text>{{opt.label}}</text>
+                </label>
+              </checkbox-group>
+            </view>
+
+            <textarea wx:if="{{item.isArea}}" class="area" data-index="{{index}}" value="{{item.text}}" disabled="{{item.readonly}}" maxlength="2000" auto-height bindinput="onText" />
+            <input wx:if="{{item.isPwd}}" class="input" password data-index="{{index}}" value="{{item.text}}" disabled="{{item.readonly}}" placeholder="请输入" bindinput="onText" />
+            <input wx:if="{{item.isNum}}" class="input" type="digit" data-index="{{index}}" value="{{item.text}}" disabled="{{item.readonly}}" placeholder="请输入" bindinput="onText" />
+
+            <view wx:if="{{item.isFile}}" class="attach">
+              <view wx:for="{{item.files}}" wx:for-item="file" wx:for-index="fi" wx:key="fi" class="file" data-index="{{index}}" data-fi="{{fi}}" bindtap="previewAttach">
+                <view class="file-ico">文</view>
+                <text class="file-name">{{file.name}}</text>
+                <text wx:if="{{item.canUpload}}" class="file-del" catchtap="removeAttach" data-index="{{index}}" data-fi="{{fi}}">删除</text>
+              </view>
+              <view wx:if="{{item.canUpload}}" class="upload" data-index="{{index}}" bindtap="chooseFile">
+                <text class="plus">+</text>
+                <text>添加附件 / 图片</text>
+              </view>
+              <view wx:if="{{item.noFiles}}" class="hint">暂无附件</view>
+            </view>
+
+            <view wx:if="{{item.isSub}}" class="sub">
+              <view wx:for="{{item.rows}}" wx:for-item="row" wx:for-index="ri" wx:key="rid" class="sub-card">
+                <view class="sub-bar">
+                  <text>第 {{row.no}} 行</text>
+                  <text wx:if="{{item.canUpload}}" class="file-del" data-index="{{index}}" data-ri="{{ri}}" bindtap="removeRow">删除</text>
+                </view>
+                <block wx:for="{{row.cells}}" wx:for-item="cell" wx:for-index="ci" wx:key="ck">
+                  <view wx:if="{{cell.show}}" class="sub-field">
+                    <view class="sub-label">{{cell.label}}</view>
+                    <view wx:if="{{cell.isDate}}">
+                      <picker mode="date" data-index="{{index}}" data-ri="{{ri}}" data-ci="{{ci}}" value="{{cell.text}}" disabled="{{item.readonly}}" bindchange="onCellDate">
+                        <view class="control sm {{item.offClass}}">
+                          <text>{{cell.display}}</text>
+                          <text class="arrow"></text>
+                        </view>
+                      </picker>
+                    </view>
+                    <view wx:if="{{cell.isPick}}">
+                      <picker data-index="{{index}}" data-ri="{{ri}}" data-ci="{{ci}}" range="{{cell.optionLabels}}" value="{{cell.index}}" disabled="{{item.readonly}}" bindchange="onCellPick">
+                        <view class="control sm {{item.offClass}}">
+                          <text>{{cell.display}}</text>
+                          <text class="arrow"></text>
+                        </view>
+                      </picker>
+                    </view>
+                    <textarea wx:if="{{cell.isArea}}" class="area sm" data-index="{{index}}" data-ri="{{ri}}" data-ci="{{ci}}" value="{{cell.text}}" disabled="{{item.readonly}}" auto-height bindinput="onCell" />
+                    <input wx:if="{{cell.isText}}" class="input sm" data-index="{{index}}" data-ri="{{ri}}" data-ci="{{ci}}" value="{{cell.text}}" disabled="{{item.readonly}}" placeholder="请输入" bindinput="onCell" />
+                  </view>
+                </block>
+              </view>
+              <view wx:if="{{item.canUpload}}" class="upload" data-index="{{index}}" bindtap="addRow">
+                <text class="plus">+</text>
+                <text>添加一行</text>
+              </view>
+            </view>
+
+            <input wx:if="{{item.isText}}" class="input" data-index="{{index}}" value="{{item.text}}" disabled="{{item.readonly}}" placeholder="请输入" bindinput="onText" />
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <view class="footer">
+      <button wx:if="{{showSubmit}}" class="btn primary" loading="{{pending}}" bindtap="submit">提交办理</button>
+      <button wx:if="{{canSave}}" class="btn secondary" loading="{{pending}}" bindtap="save">保存草稿</button>
+      <view wx:if="{{viewOnly && !showSubmit}}" class="hint center">当前角色只能查看，不能在小程序改这份单据。</view>
+    </view>
+  </view>
+</view>

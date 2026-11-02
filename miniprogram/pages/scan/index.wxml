@@ -1,0 +1,50 @@
+<view class="page">
+  <view class="card" wx:if="{{!device}}">
+    <view class="title">扫描设备二维码</view>
+    <view class="hint">使用设备台账下载的二维码。扫码后仪器名称、型号、厂家和客户经理会自动带出，其余内容必填。</view>
+    <button class="btn" bindtap="scan">扫码报修</button>
+    <input class="input" placeholder="或输入设备编码" value="{{code}}" bindinput="onCode" />
+    <button class="btn ghost" bindtap="lookupManual">按编码查找</button>
+  </view>
+
+  <block wx:else>
+    <view class="card">
+      <view class="name">{{device.name}}</view>
+      <view class="meta">编号 {{device.code}}</view>
+      <view class="meta" wx:if="{{device.model}}">型号 {{device.model}}</view>
+      <view class="meta" wx:if="{{device.brand}}">厂家 {{device.brand}}</view>
+      <view class="meta">客户经理 {{device.managerName || '未绑定，请在表单填写'}}</view>
+    </view>
+
+    <view class="card muted" wx:if="{{blocked}}">{{blocked}}</view>
+    <view class="card" wx:else>
+      <view class="title">报修内容</view>
+      <picker mode="selector" range="{{grades}}" value="{{gradeIndex}}" bindchange="onGrade">
+        <view class="field">
+          <text class="lab">工单等级</text>
+          <text class="{{form.grade ? '' : 'placeholder'}}">{{form.grade || '请选择'}}</text>
+        </view>
+      </picker>
+      <view class="field"><text class="lab">客户名称</text><input data-key="customerName" value="{{form.customerName}}" bindinput="onField" placeholder="必填" /></view>
+      <view class="field"><text class="lab">单位地址</text><input data-key="customerAddress" value="{{form.customerAddress}}" bindinput="onField" placeholder="必填" /></view>
+      <view class="field"><text class="lab">联系人</text><input data-key="contactName" value="{{form.contactName}}" bindinput="onField" placeholder="必填" /></view>
+      <view class="field"><text class="lab">联系电话</text><input data-key="contactPhone" type="number" value="{{form.contactPhone}}" bindinput="onField" placeholder="必填" /></view>
+      <view class="field"><text class="lab">仪器名称</text><input data-key="instrumentName" value="{{form.instrumentName}}" disabled="{{lock.instrumentName}}" bindinput="onField" placeholder="必填" /></view>
+      <view class="field"><text class="lab">仪器型号</text><input data-key="instrumentModel" value="{{form.instrumentModel}}" disabled="{{lock.instrumentModel}}" bindinput="onField" placeholder="必填" /></view>
+      <view class="field"><text class="lab">厂家或品牌</text><input data-key="brand" value="{{form.brand}}" disabled="{{lock.brand}}" bindinput="onField" placeholder="必填" /></view>
+      <view class="field column"><text class="lab">故障现象概述</text><textarea class="area" data-key="fault" value="{{form.fault}}" bindinput="onField" placeholder="必填" /></view>
+      <view class="field"><text class="lab">委托单位</text><input data-key="clientOrg" value="{{form.clientOrg}}" bindinput="onField" placeholder="必填" /></view>
+      <view class="field"><text class="lab">客户经理</text><input data-key="accountManager" value="{{form.accountManager}}" disabled="{{lock.accountManager}}" bindinput="onField" placeholder="必填" /></view>
+      <view class="field"><text class="lab">备注</text><input data-key="remark" value="{{form.remark}}" bindinput="onField" placeholder="必填" /></view>
+      <view class="photos">
+        <view class="photo" wx:for="{{photos}}" wx:key="*this">
+          <image class="photo-img" src="{{item}}" mode="aspectFill" bindtap="removePhoto" data-index="{{index}}" />
+        </view>
+        <view class="photo add" bindtap="choosePhoto">上传图片</view>
+      </view>
+      <button class="btn" loading="{{pending}}" bindtap="submit">提交报修</button>
+      <button class="btn ghost" bindtap="scan">重新扫码</button>
+    </view>
+  </block>
+  <tab-bar active="scan" />
+</view>

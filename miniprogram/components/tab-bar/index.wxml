@@ -1,0 +1,38 @@
+<view class="dock">
+<view wx:if="{{mode === 'office'}}" class="tabs">
+  <view class="tab {{active === 'workbench' ? 'on' : ''}}" bindtap="go" data-url="/pages/workbench/index">
+    <view class="ico">⌂</view>
+    <text>工作台</text>
+  </view>
+  <view class="tab {{active === 'inbox' ? 'on' : ''}}" bindtap="go" data-url="/pages/inbox/index">
+    <view class="ico">☰</view>
+    <text>待办</text>
+  </view>
+  <view class="tab {{active === 'me' ? 'on' : ''}}" bindtap="go" data-url="/pages/me/index">
+    <view class="ico">☺</view>
+    <text>我的</text>
+  </view>
+</view>
+<view wx:else class="tabs">
+  <view class="tab {{active === 'home' ? 'on' : ''}}" bindtap="go" data-url="/pages/home/index">
+    <view class="ico">⌂</view>
+    <text>首页</text>
+  </view>
+  <view class="tab {{active === 'content' ? 'on' : ''}}" bindtap="go" data-url="/pages/content/index">
+    <view class="ico">☰</view>
+    <text>服务内容</text>
+  </view>
+  <view class="tab mid" bindtap="go" data-url="/pages/scan/index">
+    <view class="hub {{active === 'scan' ? 'on' : ''}}">扫</view>
+    <text class="{{active === 'scan' ? 'on-text' : ''}}">扫码报修</text>
+  </view>
+  <view class="tab {{active === 'service' ? 'on' : ''}}" bindtap="go" data-url="/pages/service/index">
+    <view class="ico">▷</view>
+    <text>服务</text>
+  </view>
+  <view class="tab {{active === 'me' ? 'on' : ''}}" bindtap="go" data-url="/pages/me/index">
+    <view class="ico">☺</view>
+    <text>我的</text>
+  </view>
+</view>
+</view>

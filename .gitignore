@@ -1,0 +1,16 @@
+target/
+uploads/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+frontend/node_modules/
+frontend/dist/
+data/
+*.log
+.DS_Store
+tmp/
+.playwright-cli/
+.trae/

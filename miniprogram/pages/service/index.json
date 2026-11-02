@@ -1,0 +1,4 @@
+{
+  "navigationBarTitleText": "服务",
+  "usingComponents": { "tab-bar": "/components/tab-bar/index" }
+}

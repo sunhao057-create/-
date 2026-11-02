@@ -1,0 +1,13 @@
+<view class="wrap">
+  <view class="brand">
+    <view class="name">{{name}}</view>
+    <view class="hint">客户账号登录后，查看本公司设备，并提交维修。</view>
+  </view>
+  <view class="card">
+    <view class="title">登录</view>
+    <input class="input" placeholder="用户名" value="{{username}}" bindinput="onUser" />
+    <input class="input" password placeholder="密码" value="{{password}}" bindinput="onPass" />
+    <view wx:if="{{error}}" class="error">{{error}}</view>
+    <button class="btn" loading="{{pending}}" bindtap="submit">进入设备</button>
+  </view>
+</view>

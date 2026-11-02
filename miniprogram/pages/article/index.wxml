@@ -1,0 +1,6 @@
+<view class="page">
+  <image wx:if="{{image}}" class="cover" src="{{image}}" mode="aspectFill" />
+  <view class="title">{{title}}</view>
+  <view class="summary" wx:if="{{summary}}">{{summary}}</view>
+  <view class="body">{{body || '暂无正文'}}</view>
+</view>

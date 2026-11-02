@@ -1,0 +1,8 @@
+---
+description: 日期时间字段必须整框可点选，使用 DateInput
+globs: frontend/**/*.{tsx,ts,css}
+---
+
+# 日期时间字段
+
+点输入框内任意位置都要能打开选择器。统一用 `frontend/src/ui/DateInput.tsx`，禁止裸写 `Input type="date|datetime-local|time|month"`。详见 `docs/sop/forms.md`。

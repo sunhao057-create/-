@@ -1,0 +1,130 @@
+.page {
+  min-height: 100vh;
+  padding: 0 16px 24px;
+  padding-bottom: calc(140px + constant(safe-area-inset-bottom));
+  padding-bottom: calc(140px + env(safe-area-inset-bottom));
+  background: #f3f6fb;
+  box-sizing: border-box;
+}
+
+.empty {
+  margin-top: 24px;
+  color: #64748b;
+  font-size: 14px;
+  text-align: center;
+}
+
+.hero {
+  margin-top: calc(12px + env(safe-area-inset-top));
+  padding: 20px 18px 18px;
+  border-radius: 22px;
+  color: #fff;
+  background: linear-gradient(145deg, #1d4ed8, #0f172a 88%);
+  box-shadow: 0 16px 40px rgba(29, 78, 216, 0.28);
+}
+
+.hi {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.title {
+  margin-top: 6px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.desc {
+  margin-top: 8px;
+  font-size: 13px;
+  opacity: 0.86;
+  line-height: 1.45;
+}
+
+.stats {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.stat {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 10px 8px;
+  text-align: center;
+}
+
+.num {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.stat text:last-child {
+  font-size: 11px;
+  opacity: 0.88;
+}
+
+.section {
+  margin: 18px 0 8px;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 4px 10px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.more {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 400;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.app {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 2px 10px;
+  box-sizing: border-box;
+}
+
+.app text {
+  font-size: 11px;
+  color: #334155;
+  text-align: center;
+  max-width: 72px;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+}
+
+.tone-blue { background: linear-gradient(160deg, #38bdf8, #2563eb); }
+.tone-violet { background: linear-gradient(160deg, #a78bfa, #7c3aed); }
+.tone-emerald { background: linear-gradient(160deg, #34d399, #059669); }
+.tone-amber { background: linear-gradient(160deg, #fbbf24, #d97706); }
+.tone-rose { background: linear-gradient(160deg, #fb7185, #e11d48); }
+.tone-slate { background: linear-gradient(160deg, #94a3b8, #475569); }
+.tone-cyan { background: linear-gradient(160deg, #22d3ee, #0891b2); }
+.tone-indigo { background: linear-gradient(160deg, #818cf8, #4f46e5); }

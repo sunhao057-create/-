@@ -1,0 +1,8 @@
+<web-view wx:if="{{src}}" src="{{src}}" bindload="onWebLoad" binderror="onWebError"></web-view>
+<view wx:else class="fallback">
+  <view class="t">{{title}}</view>
+  <view class="d">{{hint}}</view>
+  <view class="link">{{link}}</view>
+  <button class="btn" bindtap="copy">复制链接，用浏览器打开</button>
+  <button wx:if="{{canRetry}}" class="ghost" bindtap="retry">重新打开</button>
+</view>

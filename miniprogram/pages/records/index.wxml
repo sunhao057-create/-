@@ -1,0 +1,11 @@
+<view class="page">
+  <view class="head">{{title}}</view>
+  <view class="hint">这里是电脑端已提交、并且属于本公司设备的数据。</view>
+  <view wx:if="{{empty}}" class="empty">{{empty}}</view>
+  <view class="card" wx:for="{{rows}}" wx:key="id" bindtap="open" data-device="{{item.deviceId}}">
+    <view class="title">{{item.title}}</view>
+    <view class="device" wx:if="{{item.device}}">{{item.device}}</view>
+    <view class="line" wx:if="{{item.line}}">{{item.line}}</view>
+    <view class="extra" wx:if="{{item.extra}}">{{item.extra}}</view>
+  </view>
+</view>

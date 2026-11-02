@@ -1,0 +1,59 @@
+<view class="page">
+  <swiper class="banner" indicator-dots autoplay circular indicator-active-color="#2f6bff" indicator-color="rgba(255,255,255,.6)">
+    <block wx:if="{{banners.length}}">
+      <swiper-item wx:for="{{banners}}" wx:key="id">
+        <image wx:if="{{item.image}}" class="slide" src="{{item.image}}" mode="aspectFill" style="width:100%;height:168px;" />
+        <view wx:else class="slide ph">{{item.title}}</view>
+      </swiper-item>
+    </block>
+    <swiper-item wx:else>
+      <view class="slide ph">
+        <view class="brand">蜜蜂e工 · 实验室守护者</view>
+        <view class="hero">报修</view>
+      </view>
+    </swiper-item>
+  </swiper>
+
+  <view class="notice">
+    <text class="horn">播</text>
+    <text class="notice-text">{{notice}}</text>
+  </view>
+
+  <view class="section">热门服务</view>
+  <view class="grid">
+    <view class="tile orange" bindtap="openKnowledge">
+      <view class="mark">知</view>
+      <text>知识中心</text>
+    </view>
+    <view class="tile gray" bindtap="openMove">
+      <view class="mark">迁</view>
+      <text>搬迁服务</text>
+    </view>
+    <view class="tile orange" bindtap="openRepair">
+      <view class="mark">备</view>
+      <text>设备信息</text>
+    </view>
+    <view class="tile gray" bindtap="openMaint">
+      <view class="mark">保</view>
+      <text>维保服务</text>
+    </view>
+  </view>
+
+  <view class="section">走进公司</view>
+  <view class="pair">
+    <view class="card" wx:for="{{companies}}" wx:key="id" bindtap="openArticle" data-id="{{item.id}}">
+      <image wx:if="{{item.image}}" class="cover" src="{{item.image}}" mode="aspectFill" style="width:100%;height:92px;" />
+      <view wx:else class="cover ph-sm">{{item.title}}</view>
+      <text class="cap">{{item.title}}</text>
+    </view>
+    <view wx:if="{{!companies.length}}" class="card">
+      <view class="cover ph-sm">工作缩影</view>
+      <text class="cap">工作缩影</text>
+    </view>
+    <view wx:if="{{companies.length < 2}}" class="card">
+      <view class="cover ph-sm gold">服务介绍</view>
+      <text class="cap">服务介绍</text>
+    </view>
+  </view>
+  <tab-bar active="home" />
+</view>

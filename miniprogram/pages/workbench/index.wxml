@@ -1,0 +1,43 @@
+<view class="page safe-pad">
+  <view class="hero">
+    <view class="hi">{{hello}}，{{displayName}}</view>
+    <view class="title">{{name}}</view>
+    <view class="desc">点下方应用办理；有待办会红点提醒。常用申请一键直达。</view>
+    <view class="stats">
+      <view class="stat" bindtap="goInbox">
+        <text class="num">{{todo}}</text>
+        <text>待我处理</text>
+      </view>
+      <view class="stat" bindtap="goInbox">
+        <text class="num">{{overdue}}</text>
+        <text>已超时</text>
+      </view>
+      <view class="stat" bindtap="goInbox">
+        <text class="num">{{draft}}</text>
+        <text>草稿</text>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{!groups.length}}" class="empty">当前角色没有可查看的应用</view>
+  <view wx:for="{{groups}}" wx:key="key" class="section">
+    <view class="head">
+      <text>{{item.title}}</text>
+      <text wx:if="{{item.showMore}}" class="more" bindtap="toggleTech">{{openTech ? '收起' : '更多'}}</text>
+    </view>
+    <view class="grid">
+      <view
+        wx:for="{{item.shown}}"
+        wx:for-item="app"
+        wx:key="path"
+        class="app"
+        data-path="{{app.openPath}}"
+        bindtap="openApp"
+      >
+        <view class="icon tone-{{app.tone}}">{{app.glyph}}</view>
+        <text>{{app.label}}</text>
+      </view>
+    </view>
+  </view>
+  <tab-bar mode="office" active="workbench" todo="{{todo}}" />
+</view>

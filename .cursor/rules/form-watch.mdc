@@ -1,0 +1,14 @@
+---
+description: 表单字段名当 JS 变量用必须 Form.useWatch
+globs: frontend/**/*.{tsx,ts}
+---
+
+# 表单字段监听
+
+表单里的 `name="customerId"` 等字段，若在 `useMemo` / `useEffect` / JSX 中当变量使用，必须先：
+
+```tsx
+const customerId = Form.useWatch('customerId', form)
+```
+
+不要直接写 `customers.find((item) => item.id === customerId)`。公开页与后台页同一套写法。详见 `docs/sop/forms.md`。

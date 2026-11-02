@@ -1,0 +1,29 @@
+<view class="page safe-pad">
+  <scroll-view class="chips" scroll-x>
+    <view
+      wx:for="{{tabs}}"
+      wx:key="key"
+      class="chip {{type === item.key ? 'on' : ''}}"
+      data-key="{{item.key}}"
+      bindtap="switchTab"
+    >{{item.label}}</view>
+  </scroll-view>
+  <view wx:if="{{type === 'TODO' || type === 'RETURNED'}}" class="filter">
+    <text>只看已超时</text>
+    <switch checked="{{overdueOnly}}" bindchange="onOverdue" color="#2563eb" />
+  </view>
+  <view wx:if="{{loading && !rows.length}}" class="empty">加载中…</view>
+  <view wx:elif="{{!rows.length}}" class="empty">这一栏暂时没有单据</view>
+  <view wx:else>
+    <view wx:for="{{rows}}" wx:key="id" class="todo" data-path="{{item.path}}" bindtap="openRow">
+      <view class="h">{{item.title || item.formModuleLabel}}</view>
+      <view class="p">{{item.formModuleLabel}}{{item.nodeName ? ' · ' + item.nodeName : ''}}</view>
+      <view class="meta">
+        <text class="pill">{{item.statusText}}</text>
+        <text wx:if="{{item.overdue}}" class="pill warn">已超时</text>
+        <text class="pill">{{item.createdAt}}</text>
+      </view>
+    </view>
+  </view>
+  <tab-bar mode="office" active="inbox" todo="{{todo}}" />
+</view>

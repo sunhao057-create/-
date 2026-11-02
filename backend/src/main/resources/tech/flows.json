@@ -1,0 +1,336 @@
+{
+  "CUSTOMER_INSTRUMENT": [
+    {
+      "key": "fill",
+      "name": "申请人",
+      "type": "applicant"
+    }
+  ],
+  "WECHAT_CONTACTS": [
+    {
+      "key": "fill",
+      "name": "申请人",
+      "type": "applicant"
+    }
+  ],
+  "MOVE_CARD": [
+    {
+      "key": "fill",
+      "name": "内容登记",
+      "type": "applicant"
+    },
+    {
+      "key": "n2",
+      "name": "用户老师签字",
+      "type": "approval",
+      "assigneeField": "field_466016744"
+    },
+    {
+      "key": "n3",
+      "name": "负责人抄送",
+      "type": "cc",
+      "assigneeField": "field_466016800"
+    }
+  ],
+  "MAINT_BASIC": [
+    {
+      "key": "fill",
+      "name": "维保内容登记",
+      "type": "applicant"
+    },
+    {
+      "key": "n2",
+      "name": "用户老师签字",
+      "type": "approval",
+      "assigneeField": "field_240892056"
+    },
+    {
+      "key": "n3",
+      "name": "维保负责人抄送",
+      "type": "cc",
+      "assigneeField": "field_242602830"
+    }
+  ],
+  "MAINT_LCMS": [
+    {
+      "key": "fill",
+      "name": "维保内容登记",
+      "type": "applicant"
+    },
+    {
+      "key": "n2",
+      "name": "客户评价",
+      "type": "approval"
+    },
+    {
+      "key": "n3",
+      "name": "维保负责人抄送",
+      "type": "cc",
+      "assigneeField": "field_303084402"
+    }
+  ],
+  "MAINT_ICPMS": [
+    {
+      "key": "fill",
+      "name": "维保内容登记",
+      "type": "applicant"
+    },
+    {
+      "key": "n2",
+      "name": "客户评价",
+      "type": "approval"
+    },
+    {
+      "key": "n3",
+      "name": "维保负责人抄送",
+      "type": "cc",
+      "assigneeField": "field_303092107"
+    }
+  ],
+  "MAINT_ICP": [
+    {
+      "key": "fill",
+      "name": "维保内容登记",
+      "type": "applicant"
+    },
+    {
+      "key": "n2",
+      "name": "客户评价",
+      "type": "approval"
+    },
+    {
+      "key": "n3",
+      "name": "维保负责人抄送",
+      "type": "cc",
+      "assigneeField": "field_303098099"
+    }
+  ],
+  "MAINT_AAS": [
+    {
+      "key": "fill",
+      "name": "维保内容登记",
+      "type": "applicant"
+    },
+    {
+      "key": "n2",
+      "name": "客户评价",
+      "type": "approval"
+    },
+    {
+      "key": "n3",
+      "name": "维保负责人抄送",
+      "type": "cc",
+      "assigneeField": "field_303103169"
+    }
+  ],
+  "MAINT_LC": [
+    {
+      "key": "fill",
+      "name": "维保内容登记",
+      "type": "applicant"
+    },
+    {
+      "key": "n2",
+      "name": "客户评价",
+      "type": "approval"
+    },
+    {
+      "key": "n3",
+      "name": "抄送维保负责人",
+      "type": "cc",
+      "assigneeField": "field_303104890"
+    }
+  ],
+  "MAINT_GC": [
+    {
+      "key": "fill",
+      "name": "维保内容登记",
+      "type": "applicant"
+    },
+    {
+      "key": "n2",
+      "name": "客户评价",
+      "type": "approval"
+    },
+    {
+      "key": "n3",
+      "name": "抄送维保负责人",
+      "type": "cc",
+      "assigneeField": "field_303108142"
+    }
+  ],
+  "MAINT_GCMS": [
+    {
+      "key": "fill",
+      "name": "维保内容登记",
+      "type": "applicant"
+    },
+    {
+      "key": "n2",
+      "name": "客户评价",
+      "type": "approval"
+    },
+    {
+      "key": "n3",
+      "name": "抄送维保负责人",
+      "type": "cc",
+      "assigneeField": "field_303108577"
+    }
+  ],
+  "MAINT_AFS": [
+    {
+      "key": "fill",
+      "name": "维保内容登记",
+      "type": "applicant"
+    },
+    {
+      "key": "n2",
+      "name": "客户评价",
+      "type": "approval"
+    },
+    {
+      "key": "n3",
+      "name": "抄送维保负责人",
+      "type": "cc",
+      "assigneeField": "field_303109042"
+    }
+  ],
+  "MAINT_UV": [
+    {
+      "key": "fill",
+      "name": "维保内容登记",
+      "type": "applicant"
+    },
+    {
+      "key": "n2",
+      "name": "客户评价",
+      "type": "approval"
+    },
+    {
+      "key": "n3",
+      "name": "抄送维保负责人",
+      "type": "cc",
+      "assigneeField": "field_303109510"
+    }
+  ],
+  "MAINT_LEGACY": [
+    {
+      "key": "fill",
+      "name": "维保内容登记",
+      "type": "applicant"
+    }
+  ],
+  "SPECIAL_CONFIRM": [
+    {
+      "key": "fill",
+      "name": "申请人",
+      "type": "applicant"
+    }
+  ],
+  "TICKET_POOL": [
+    { "key": "fill", "name": "用户报修", "type": "applicant" },
+    { "key": "respond", "name": "工程师响应", "type": "approval", "assigneeField": "field_354920940" },
+    { "key": "accept", "name": "工程师接单", "type": "approval", "assigneeField": "field_354920940" },
+    { "key": "work", "name": "填写工单/服务", "type": "approval", "assigneeField": "field_354920940" },
+    { "key": "sign", "name": "用户签字确认", "type": "approval", "assigneeField": "field_354920929" }
+  ],
+  "SERVICE_REPORT": [
+    { "key": "fill", "name": "填写服务单", "type": "applicant" },
+    { "key": "respond", "name": "工程师响应", "type": "approval", "assigneeField": "field_285995417" },
+    { "key": "accept", "name": "工程师接单", "type": "approval", "assigneeField": "field_285995417" },
+    { "key": "work", "name": "工程师办理", "type": "approval", "assigneeField": "field_285995417" },
+    { "key": "sign", "name": "用户签字确认", "type": "approval", "assigneeField": "field_221722810" }
+  ],
+  "REPAIR_CARD": [
+    {
+      "key": "fill",
+      "name": "申请人",
+      "type": "applicant"
+    },
+    {
+      "key": "n2",
+      "name": "工程师维修",
+      "type": "approval"
+    }
+  ],
+  "INSTRUMENT_LIB": [
+    {
+      "key": "fill",
+      "name": "申请人",
+      "type": "applicant"
+    }
+  ],
+  "WEIGHT_CALIB": [
+    {
+      "key": "fill",
+      "name": "申请人",
+      "type": "applicant"
+    }
+  ],
+  "PM_PROJECT": [
+    {
+      "key": "fill",
+      "name": "申请人",
+      "type": "applicant"
+    }
+  ],
+  "PM_STATUS": [
+    {
+      "key": "fill",
+      "name": "申请人",
+      "type": "applicant"
+    }
+  ],
+  "PM_CHECKIN": [
+    {
+      "key": "fill",
+      "name": "申请人",
+      "type": "applicant"
+    },
+    {
+      "key": "n2",
+      "name": "项目负责人确认",
+      "type": "approval",
+      "assigneeField": "field_215802621"
+    }
+  ],
+  "PM_MAINT_DAILY": [
+    {
+      "key": "fill",
+      "name": "申请人",
+      "type": "applicant"
+    },
+    {
+      "key": "n2",
+      "name": "抄送",
+      "type": "cc",
+      "assigneeField": "field_431942980"
+    }
+  ],
+  "PM_MOVE_DAILY": [
+    {
+      "key": "fill",
+      "name": "申请人",
+      "type": "applicant"
+    },
+    {
+      "key": "n2",
+      "name": "抄送",
+      "type": "cc",
+      "assigneeField": "field_398354512"
+    }
+  ],
+  "PM_MAKEUP": [
+    {
+      "key": "fill",
+      "name": "申请人",
+      "type": "applicant"
+    },
+    {
+      "key": "n2",
+      "name": "签到确认",
+      "type": "approval",
+      "assigneeField": "field_215824247"
+    }
+  ]
+}

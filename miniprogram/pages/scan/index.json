@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "扫码报修",
+  "usingComponents": {
+    "tab-bar": "/components/tab-bar/index"
+  }
+}

@@ -1,0 +1,25 @@
+<view class="page">
+  <swiper wx:if="{{banners.length}}" class="banner" indicator-dots autoplay circular>
+    <swiper-item wx:for="{{banners}}" wx:key="id" bindtap="open" data-id="{{item.id}}">
+      <image wx:if="{{item.image}}" class="banner" src="{{item.image}}" mode="aspectFill" />
+      <view wx:else class="banner ph">{{item.title}}</view>
+    </swiper-item>
+  </swiper>
+  <view class="section" wx:if="{{tiles.length}}">服务中心</view>
+  <view class="grid">
+    <view class="tile {{index % 2 ? 'orange' : 'gray'}}" wx:for="{{tiles}}" wx:key="id" bindtap="open" data-id="{{item.id}}">
+      <image wx:if="{{item.image}}" class="tile-bg" src="{{item.image}}" mode="aspectFill" />
+      <text class="tile-title">{{item.title}}</text>
+    </view>
+  </view>
+  <view class="section" wx:if="{{standards.length}}">行业标准</view>
+  <view class="pair">
+    <view class="card" wx:for="{{standards}}" wx:key="id" bindtap="open" data-id="{{item.id}}">
+      <image wx:if="{{item.image}}" class="cover" src="{{item.image}}" mode="aspectFill" />
+      <view wx:else class="cover ph-sm">{{item.title}}</view>
+      <text class="cap">{{item.title}}</text>
+    </view>
+  </view>
+  <view wx:if="{{!tiles.length && !standards.length && !banners.length}}" class="empty">还没有服务内容。请在电脑端「客户小程序 / 服务内容」里提交。</view>
+  <tab-bar active="content" />
+</view>

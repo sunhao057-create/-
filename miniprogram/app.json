@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/login/index",
+    "pages/home/index",
+    "pages/content/index",
+    "pages/devices/index",
+    "pages/service/index",
+    "pages/me/index",
+    "pages/articles/index",
+    "pages/article/index",
+    "pages/device/index",
+    "pages/records/index",
+    "pages/scan/index",
+    "pages/workbench/index",
+    "pages/inbox/index",
+    "pages/list/index",
+    "pages/form/index",
+    "pages/web/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "蜜蜂e工",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f6f7f9",
+    "backgroundTextStyle": "dark"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

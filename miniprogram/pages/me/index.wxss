@@ -1,0 +1,70 @@
+.page {
+  min-height: 100vh;
+  padding: 16px 16px 24px;
+  padding-bottom: calc(140px + constant(safe-area-inset-bottom));
+  padding-bottom: calc(140px + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  background: #e2e8f0;
+}
+
+.ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: #2563eb;
+  font-size: 22px;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sub {
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.row {
+  padding: 16px;
+  font-size: 15px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.out {
+  margin-top: 24px;
+  height: 48px;
+  line-height: 48px;
+  border-radius: 14px;
+  background: #fff;
+  color: #e11d48;
+}
+
+.out::after {
+  border: 0;
+}

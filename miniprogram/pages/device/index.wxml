@@ -1,0 +1,35 @@
+<view class="page" wx:if="{{device}}">
+  <view class="card">
+    <view class="name">{{device.name || '未命名设备'}}</view>
+    <view class="meta">编号 {{device.code}}</view>
+    <view class="meta">状态 {{device.statusLabel}}</view>
+    <view class="meta" wx:if="{{device.model}}">型号 {{device.model}}</view>
+    <view class="meta" wx:if="{{device.brand}}">厂家 {{device.brand}}</view>
+    <view class="meta" wx:if="{{device.location}}">位置 {{device.location}}</view>
+    <view class="meta" wx:if="{{device.departmentName}}">公司 {{device.departmentName}}</view>
+    <view class="meta">客户经理 {{device.managerName || '未绑定'}}</view>
+    <button class="btn" wx:if="{{device.status === 'IN_USE'}}" bindtap="goRepair">报修这台设备</button>
+  </view>
+
+  <view class="title section">维保服务记录</view>
+  <view wx:if="{{!maintRecords.length}}" class="empty">这台设备还没有维保记录</view>
+  <view class="card" wx:for="{{maintRecords}}" wx:key="id">
+    <view class="row">
+      <text class="kind">{{item.serviceLabel}}</text>
+      <text class="status">{{item.startTime}}</text>
+    </view>
+    <view class="reason">{{item.title}}</view>
+    <view class="meta" wx:if="{{item.customerName}}">{{item.customerName}}</view>
+  </view>
+
+  <view class="title section">维修 / 搬迁 / 报废</view>
+  <view wx:if="{{!orders.length}}" class="empty">还没有处理记录</view>
+  <view class="card" wx:for="{{orders}}" wx:key="id">
+    <view class="row">
+      <text class="kind">{{item.kindLabel}}</text>
+      <text class="status">{{item.status}}</text>
+    </view>
+    <view class="meta" wx:if="{{item.applyDate}}">{{item.applyDate}}</view>
+    <view class="reason">{{item.reason}}</view>
+  </view>
+</view>

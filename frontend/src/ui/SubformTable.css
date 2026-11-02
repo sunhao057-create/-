@@ -1,0 +1,65 @@
+.subform-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.subform-card {
+  border: 1px solid var(--app-border, #d9d9d9);
+  border-radius: 8px;
+  padding: 12px;
+  background: var(--app-card-bg, #fff);
+}
+
+.subform-card-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.subform-card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px 12px;
+}
+
+@media (min-width: 480px) {
+  .subform-card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .subform-card-cell--wide {
+    grid-column: 1 / -1;
+  }
+}
+
+.subform-card-cell {
+  min-width: 0;
+}
+
+.subform-card-label {
+  font-size: 12px;
+  color: var(--app-text-secondary, #8c8c8c);
+  margin-bottom: 4px;
+}
+
+.subform-card-cell .ant-form-item,
+.subform-table .ant-form-item {
+  margin-bottom: 0;
+}
+
+.subform-card-cell .ant-input,
+.subform-card-cell .ant-input-number,
+.subform-card-cell .ant-select,
+.subform-card-cell input {
+  width: 100% !important;
+  max-width: 100%;
+}
+
+.subform-table-wrap {
+  margin-bottom: 12px;
+  max-width: 100%;
+}

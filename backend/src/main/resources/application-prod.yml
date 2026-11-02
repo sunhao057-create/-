@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:${PM_DATA_DIR:/opt/project-mgmt/data}/db;MODE=MySQL;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=TRUE;AUTO_SERVER=FALSE
+    username: sa
+    password: ${PM_DB_PASSWORD:changeme}
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+server:
+  address: 127.0.0.1
+  port: ${PM_APP_PORT:18081}
+  servlet:
+    session:
+      cookie:
+        same-site: lax
+        http-only: true
+        secure: false
+
+app:
+  cursor:
+    api-key: ${CURSOR_API_KEY:}
+    repo-url: ${CURSOR_REPO_URL:}
+    starting-ref: ${CURSOR_STARTING_REF:main}
+  upload-dir: ${PM_UPLOAD_DIR:/opt/project-mgmt/uploads}
+  seed-demo: false
+  import-token-file: ${PM_IMPORT_TOKEN_FILE:/opt/project-mgmt/import.token}
+  cors-origins: ${PM_CORS_ORIGINS:http://101.132.181.18:8098}
+
+logging:
+  file:
+    name: ${PM_LOG_FILE:/opt/project-mgmt/logs/app.log}

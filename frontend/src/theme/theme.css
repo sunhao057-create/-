@@ -1,0 +1,167 @@
+:root {
+  --app-bg: #f5f6f8;
+  --app-surface: #ffffff;
+  --app-surface-2: #f7f8fa;
+  --app-text: #1f2329;
+  --app-text-secondary: #8f959e;
+  --app-border: #dee0e3;
+  --app-primary: #3370ff;
+  --app-on-primary: #ffffff;
+  --app-sider-bg: #ffffff;
+  --app-header-bg: #ffffff;
+  --app-menu-hover: #f2f4f7;
+  --app-menu-selected: #e8f1ff;
+  --app-menu-selected-text: #3370ff;
+  --app-radius: 6px;
+  --app-shadow: 0 1px 4px rgba(31, 35, 41, 0.06);
+  --app-canvas: #f5f6f8;
+  --app-canvas-dot: #e4e6eb;
+  --app-bg-image: none;
+}
+
+.theme-page-head {
+  margin-bottom: 20px;
+}
+
+.theme-page-head h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.theme-page-head p {
+  margin: 6px 0 0;
+  color: var(--app-text-secondary, #8c8c8c);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.theme-grid.ant-radio-group {
+  display: grid;
+}
+
+.theme-card {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border: 1px solid var(--app-border, #ececec);
+  border-radius: var(--app-radius, 10px);
+  background: var(--app-surface, #fff);
+  box-shadow: var(--app-shadow, none);
+  cursor: pointer;
+}
+
+.theme-card.is-selected {
+  border-color: var(--app-primary, #171717);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--app-primary, #171717) 18%, transparent);
+}
+
+.theme-preview {
+  display: flex;
+  height: 92px;
+  overflow: hidden;
+  border-radius: calc(var(--app-radius, 10px) - 2px);
+  border: 1px solid var(--app-border, #ececec);
+}
+
+.theme-preview-sider {
+  width: 28%;
+}
+
+.theme-preview-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.theme-preview-main span:first-child {
+  height: 22px;
+}
+
+.theme-preview-main span:last-child {
+  flex: 1;
+  opacity: 0.28;
+}
+
+.theme-card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.theme-card-name {
+  font-weight: 600;
+}
+
+.theme-card-check {
+  color: var(--app-primary, #171717);
+}
+
+.theme-card p {
+  margin: 6px 0 0;
+  color: var(--app-text-secondary, #8c8c8c);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.theme-swatches {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.theme-swatches i {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.theme-from {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+}
+
+html[data-theme='soft'] .app-content .ant-card,
+html[data-theme='soft'] .auth-card,
+html[data-theme='soft'] .app-sider,
+html[data-theme='soft'] .wf-palette,
+html[data-theme='soft'] .wf-node {
+  box-shadow: var(--app-shadow);
+  border-color: transparent;
+}
+
+html[data-theme='glass'] .app-shell {
+  background-image: var(--app-bg-image);
+}
+
+html[data-theme='brutal'] .app-content .ant-card,
+html[data-theme='brutal'] .auth-card,
+html[data-theme='brutal'] .app-sider,
+html[data-theme='accessible'] .app-content .ant-card {
+  box-shadow: var(--app-shadow);
+}
+
+html[data-theme='paper'] .app-content .ant-card {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 19px,
+    rgba(92, 64, 51, 0.04) 20px
+  );
+}
+
+html[data-theme='cyber'] .app-header-title,
+html[data-theme='cyber'] .app-brand-name {
+  letter-spacing: 0.08em;
+  text-transform: none;
+}

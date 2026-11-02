@@ -1,0 +1,59 @@
+.page {
+  min-height: 100vh;
+  padding: 20px 16px 0;
+  box-sizing: border-box;
+}
+
+.hero {
+  background: #1e3a8a;
+  color: #fff;
+  border-radius: 18px;
+  padding: 22px 20px 18px;
+}
+
+.company {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.count {
+  margin-top: 8px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.unit {
+  margin-top: 4px;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.list {
+  margin-top: 16px;
+}
+
+.item {
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.meta {
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.empty {
+  margin-top: 28px;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+}

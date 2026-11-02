@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:project_mgmt;MODE=MySQL;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=TRUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+  session:
+    timeout: 399d
+    jdbc:
+      initialize-schema: always
+  sql:
+    init:
+      mode: never
+
+app:
+  upload-dir: ${java.io.tmpdir}/pm-uploads
+  cors-origins: http://localhost:5173
+  default-admin:
+    username: admin
+    password: Admin123!
+    display-name: 系统管理员

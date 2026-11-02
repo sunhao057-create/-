@@ -1,0 +1,55 @@
+package com.projectmgmt.oa;
+
+import com.projectmgmt.project.AttachmentView;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
+
+public record OaRequestView(
+        Long id,
+        String code,
+        String kind,
+        String kindLabel,
+        String applicantName,
+        Long staffId,
+        String staffName,
+        String gender,
+        String genderLabel,
+        String mobile,
+        String idNumber,
+        Long departmentId,
+        String departmentName,
+        String position,
+        String jobLevel,
+        Long targetDepartmentId,
+        String targetDepartmentName,
+        String targetPosition,
+        String targetLevel,
+        LocalDate expectedDate,
+        Long managerId,
+        String managerName,
+        Long handoverUserId,
+        String handoverName,
+        Integer probationMonths,
+        String resignType,
+        String resignTypeLabel,
+        String reason,
+        java.math.BigDecimal salary,
+        java.util.List<OaSalaryLineView> salaryLines,
+        OaInterviewView interview,
+        OaSealView seal,
+        OaQualifyView qualify,
+        OaTripView trip,
+        OaLoanView loan,
+        OaLeaveView leave,
+        boolean isPublic,
+        String submitSource,
+        String loginUsername,
+        boolean hasLoginPassword,
+        boolean applied,
+        String workflowStatus,
+        String workflowStatusLabel,
+        List<AttachmentView> files,
+        LocalDateTime createdAt
+) {
+}
